@@ -24,7 +24,9 @@ public class Figuren extends PApplet
         // Zeichne dir zunächst eine Skizze auf ein Blatt Papier und überlege dir, welche
         // Werte du den Methoden rect(x,y,b,h) und ellipse(x,y,b,h) übergeben musst, 
         // dass Bild C gezeichnet wird
-
+           
+        //triangle (100, 200, 200, 200);
+        
         // ***** hier kommen deine Anweisungen hin ************
 
         // ***** Ende der eigenen Anweisungen **********
@@ -36,7 +38,7 @@ public class Figuren extends PApplet
         circle(200, 100, 200);
         rect(100, 200, 200, 300);
         triangle (100, 200, 0, 400, 100, 400);
-        triangle (300, 200, 200, 300, 500, 400);
+        triangle (300, 200, 300, 400, 400, 400);
         // ***** Ende der eigenen Anweisungen **********  
     }
 

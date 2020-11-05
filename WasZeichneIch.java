@@ -25,7 +25,7 @@ public class WasZeichneIch extends PApplet
     public void wasZeichneIch() {
         circle(200, 100, 200);
         rect(100, 200, 200, 200);
-        triangle (100,200,
+        // triangle (100,200,
     }
 
     /**
