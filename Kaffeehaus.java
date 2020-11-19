@@ -12,10 +12,10 @@ import processing.core.PFont;
 public class Kaffeehaus extends PApplet
 {    
     int abstand=40;
-    int rechteck1=0;
-    int rechteck2=40;
-    int rechteck3=10;
-    int rechteck4=50;
+    int rechteck1=10;
+    int rechteck2=0;
+    int rechteck3=40;
+    int rechteck4=40;
     /**
      * settings() Methode 
      * Fenstergröße size(int width, int height) und smooth(int level) muss hier eingestellt werden.
@@ -37,41 +37,69 @@ public class Kaffeehaus extends PApplet
         background(255,255,255);
         noStroke();
         strokeWeight(2);
-        for (int f=0; f<10; f++){
-            fill (0, 0, 0);
-            for (int l=0; l<10; l++){
-                
-            for (int r=0; r<10; r++){
-                rect (rechteck3,rechteck1,rechteck4,rechteck2);
-                rechteck1=rechteck1+40;
+        fill (0,0,0);
+        for(int r=0; r<10; r=r+1){
+
+            for(int l=0; l<10; l=l+1){
+                /*if(l>0 && l<=3){
+                rect(rechteck1, rechteck2, rechteck3, rechteck4);
                 rechteck2=rechteck2+40;
+                rechteck1=rechteck1+10;
+                }
+                if (l==3){
+                rechteck1=30;
+                }
+                if (l>3 && l<=6){
+                rect(rechteck1, rechteck2, rechteck3, rechteck4);
+                rechteck2=rechteck2+40;
+                rechteck1=rechteck1-10;
+                } 
+                if(l==7){
+                rect(rechteck1, rechteck2, rechteck3, rechteck4);
+                rechteck1=rechteck1+10;
+                rechteck2=rechteck2+40;
+                }
+                if(l==8){
+                rect(rechteck1, rechteck2, rechteck3, rechteck4);
+                rechteck1=rechteck1+10;
+                rechteck2=rechteck2+40;
+                }
+                if(l>8 && l<=10){
+                rect(rechteck1, rechteck2, rechteck3, rechteck4);
+                rechteck2=rechteck2+40;
+                rechteck1=rechteck1-10;
+                }
+
+                }
+
+                rechteck1=rechteck1+80;
+                }
+                 */
+                for(int f=0; f<10; f=f+1){
+                    stroke(150);
+                    line (0, abstand, 640, abstand);
+
+                    abstand=abstand+40;
+                }
             }
-            rechteck3=rechteck3+40;
-            rechteck4=rechteck4+40;
-        }
-            stroke(150);
-            line (0, abstand, 640, abstand);
-
-            abstand=abstand+40;
         }
     }
+        /**
+         * Die draw() Methode wird nach der setup() Methode aufgerufen
+         * und führt den Code innerhalb ihres Blocks fortlaufend aus,
+         * bis das Programm gestoppt oder noLoop() aufgerufen wird.
+         */
+        @Override
+        public void draw()
+        {
 
-    /**
-     * Die draw() Methode wird nach der setup() Methode aufgerufen
-     * und führt den Code innerhalb ihres Blocks fortlaufend aus,
-     * bis das Programm gestoppt oder noLoop() aufgerufen wird.
-     */
-    @Override
-    public void draw()
-    {
+        }
 
-    }
-
-    /**
-     * Mit der main()-Methode wird das Programm gestartet.
-     *
-     */    
-    public static void main(String _args[]){ 
+        /**
+         * Mit der main()-Methode wird das Programm gestartet.
+         *
+         */    
+        public static void main(String _args[]){ 
         PApplet.main(new String[] {Kaffeehaus.class.getName() });
     }
 
