@@ -3,18 +3,17 @@ import processing.core.PApplet;
 import processing.core.PFont;
 
 /**
- * Klasse Kaffeehaus.
+ * Klasse Hermanngitter2.
  * Beschreibung: 
  *
  * @author (Ihr Name) 
  * @version (eine Versionsnummer oder ein Datum)
  */
-public class Kaffeehaus extends PApplet
-{    
-    int abstand=40;
-    int s=10;
-    int a=40;
-    int[] abstaende = {0, 10, 20, 10,0,10,20,10,0,10 };
+public class Hermanngitter2 extends PApplet
+{   
+    int l=0;
+    int r=0;
+    int a=50;
     /**
      * settings() Methode 
      * Fenstergröße size(int width, int height) und smooth(int level) muss hier eingestellt werden.
@@ -22,7 +21,8 @@ public class Kaffeehaus extends PApplet
     @Override
     public void settings()
     {
-        size(640,400);
+        size(500,500);
+
     }        
 
     /**
@@ -33,39 +33,8 @@ public class Kaffeehaus extends PApplet
     @Override
     public void setup()
     {
-        background(255,255,255);
-        noStroke();
-        strokeWeight(2);
-        fill (0,0,0);
-        linien();
+        background(66, 165, 250);
         quadrate();
-
-    }
-
-    /**
-     * Methode linien
-     *
-     */
-    public void linien()
-    {
-        for(int f=0; f<10; f=f+1){
-            stroke(150);
-            line (0, abstand, 640, abstand);
-
-            abstand=abstand+40;
-        }
-    }
-
-    public void quadrate()
-    {
-        for(int r=0; r<10; r=r+1){
-
-            for(int l=0; l<10; l=l+1){
-                rect(s+abstaende[r]+l*a*2,r*40,a,a);
-
-            }
-
-        }
     }
 
     /**
@@ -79,12 +48,26 @@ public class Kaffeehaus extends PApplet
 
     }
 
+    public void quadrate()
+    {
+
+        fill (0,0,0);
+        for(int r=0; r<10; r=r+1){
+
+            for(int l=0; l<10; l=l+1){
+                rect(r*50,l*50,a,a);
+
+            }
+
+        }
+    }
+
     /**
      * Mit der main()-Methode wird das Programm gestartet.
      *
      */    
     public static void main(String _args[]){ 
-        PApplet.main(new String[] {Kaffeehaus.class.getName() });
+        PApplet.main(new String[] {Hermanngitter2.class.getName() });
     }
 
 }
