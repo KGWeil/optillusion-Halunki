@@ -3,22 +3,15 @@ import processing.core.PApplet;
 import processing.core.PFont;
 
 /**
- * Klasse Hermanngitter2.
+ * Klasse wellen1.
  * Beschreibung: 
  *
  * @author (Ihr Name) 
  * @version (eine Versionsnummer oder ein Datum)
  */
-public class Hermanngitter2 extends PApplet
-{   
-    int l=0;
-    int r=0;
-    int a=50;
-    int di=15; // Abstand Quadrate innen
-    int da=30; // Abstand Quadrate außen
-    int kd=15; // Durchmesser Kreis
-    float f=87.5f;
-    float s=87.5f;
+public class wellen1 extends PApplet
+{    
+    int a=75;
     /**
      * settings() Methode 
      * Fenstergröße size(int width, int height) und smooth(int level) muss hier eingestellt werden.
@@ -26,7 +19,7 @@ public class Hermanngitter2 extends PApplet
     @Override
     public void settings()
     {
-        size(500,500);
+        size(650,500);
 
     }        
 
@@ -38,10 +31,12 @@ public class Hermanngitter2 extends PApplet
     @Override
     public void setup()
     {
-        background(66, 165, 250);
-        quadrate();
-        stroke(255);
-        kreis();
+        //orange 250, 163, 23
+        // grün 9, 250, 78
+        background (250, 163, 23);
+        zeichneQuadrate(1,2,1);
+        
+        
     }
 
     /**
@@ -55,31 +50,12 @@ public class Hermanngitter2 extends PApplet
 
     }
 
-    public void quadrate()
-    {
-
-        fill (0,0,0);
-        for(int l=0; l<7; l=l+1){
-
-            for(int r=0; r<7; r=r+1){// macht zeilen
-                rect(r*(a+di)+da,l*(a+di)+da,a,a); 
-
+    public void zeichneQuadrate(int x, int y, int farbe){
+        for (y=y;y<=0; y=y-1){
+            for(x=x;x<=0; x=x-1){
+                rect(x*a+20,y*a+20,a,a);
             }
         }
-    }
-
-    public void kreis (){
-    fill (255,255,255);
-    for(int l=1; l<7; l=l+1){
-
-            for(int r=1; r<7; r=r+1){// macht zeilen
-                circle(r*(a+di)+da-di/2,l*(a+di)+da-di/2,di); 
-
-            }
-        }
-    
-    
-    
     }
 
     /**
@@ -87,7 +63,7 @@ public class Hermanngitter2 extends PApplet
      *
      */    
     public static void main(String _args[]){ 
-        PApplet.main(new String[] {Hermanngitter2.class.getName() });
+        PApplet.main(new String[] {wellen1.class.getName() });
     }
 
 }
