@@ -11,7 +11,7 @@ import processing.core.PFont;
  */
 public class wellen1 extends PApplet
 {    
-    int a=75;
+    int s=75;
 
     /**
      * settings() Methode 
@@ -35,7 +35,7 @@ public class wellen1 extends PApplet
         //orange 250, 163, 23
         // grün 9, 250, 78
         background (250, 163, 23);
-        zeichneQuadrat(1,1,0,true);
+        zeichneQuadrat(1,*1,0);
     }
 
     /**
@@ -67,7 +67,7 @@ public class wellen1 extends PApplet
                     fill(255);
                 }
 
-                rect(r*a+20,l*a+20,a,a);
+                rect(r*s+20,l*s+20,s,s);
             }
         }
         circle(x*40,y*40,25);
@@ -80,16 +80,16 @@ public class wellen1 extends PApplet
      * @param    y    y-Koordinate
      * @param    farbe    Füllfarbe des Quadrats
      * @param    links     Falls links true ist: Kreise links; falls links false ist: Kreise rechts
-     */
+     
     public void zeichneQuadrat( int x, int y, int farbe, boolean links )
     {
         fill(farbe);
-        rect(x, y, a,a);
+        rect(x, y, s,s);
         fill (255-farbe);
-        circle(x+a/3,y,a/3);
-        circle (x+a/3, y+a*(2/3),a/3);
+        circle(x+s/3,y,s/3);
+        circle (x+s/3, y+s*(2/3),s/3);
     }
-
+    */
     /**
      * Mit der main()-Methode wird das Programm gestartet.
      *
@@ -97,5 +97,5 @@ public class wellen1 extends PApplet
     public static void main(String _args[]){ 
         PApplet.main(new String[] {wellen1.class.getName() });
     }
-
+    
 }
