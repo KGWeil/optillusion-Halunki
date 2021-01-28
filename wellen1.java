@@ -35,7 +35,7 @@ public class wellen1 extends PApplet
         //orange 250, 163, 23
         // grün 9, 250, 78
         background (250, 163, 23);
-        zeichneQuadrat(1,*1,0);
+        zeichneQuadrat(1,1,0, true);
     }
 
     /**
@@ -80,16 +80,25 @@ public class wellen1 extends PApplet
      * @param    y    y-Koordinate
      * @param    farbe    Füllfarbe des Quadrats
      * @param    links     Falls links true ist: Kreise links; falls links false ist: Kreise rechts
-     
+     */
     public void zeichneQuadrat( int x, int y, int farbe, boolean links )
     {
-        fill(farbe);
+        int farbe2;
+        if (farbe==255){
+            farbe2=0;
+        }else{
+            farbe2=255;
+        }    
+        fill(farbe2);
         rect(x, y, s,s);
-        fill (255-farbe);
-        circle(x+s/3,y,s/3);
-        circle (x+s/3, y+s*(2/3),s/3);
+        fill (farbe);
+        circle(x+s/3,y+(s*(1/3)),s/3);
+        println(y+(s*(1/3)));
+        println(s);
+        println(s/3);
+        circle (x+s/3,y+(s*(2/3)),s/3);
     }
-    */
+
     /**
      * Mit der main()-Methode wird das Programm gestartet.
      *
@@ -97,5 +106,5 @@ public class wellen1 extends PApplet
     public static void main(String _args[]){ 
         PApplet.main(new String[] {wellen1.class.getName() });
     }
-    
+
 }
