@@ -12,6 +12,9 @@ import processing.core.PFont;
 public class wellen1 extends PApplet
 {    
     int s=75;
+    int a=10;
+    int l;
+    int farbe2;
 
     /**
      * settings() Methode 
@@ -35,7 +38,8 @@ public class wellen1 extends PApplet
         //orange 250, 163, 23
         // grün 9, 250, 78
         background (250, 163, 23);
-        zeichneQuadrat(1,1,0, true);
+
+        zeichneQuadrate(1,2,3);
     }
 
     /**
@@ -57,21 +61,30 @@ public class wellen1 extends PApplet
      * @param farbe bestimmt die Farbe der Quadrate
      */ 
     public void zeichneQuadrate(int x, int y, int farbe){
-        for (int l=0; l<4; l=l+1){
-            for(int r=0; r<8; r=r+1){
+        for (l=0; l<4; l=l+1){
+            if(l%2==0){
 
-                if (farbe==1){
-                    fill(0);
-                }
-                if (farbe==0){
-                    fill(255);
-                }
-
-                rect(r*s+20,l*s+20,s,s);
             }
+
+            if (l%2==1){
+
+            }
+            for (int w=0; w<8; w=w+1){ 
+
+                strokeWeight(1);
+                if(w%2==0){
+                    zeichneQuadrat(w*75,75*l,255, true);
+                }
+                if (w%2==1){
+                    zeichneQuadrat(w*75,75*l,0,true);
+                }
+
+            }
+            stroke(9, 250, 78);
+            strokeWeight(5);
+            line (x+a,l*75+a,x+600,l*75+a);
+
         }
-        circle(x*40,y*40,25);
-        circle (x*40, y*80,25);
     }
 
     /**
@@ -83,20 +96,36 @@ public class wellen1 extends PApplet
      */
     public void zeichneQuadrat( int x, int y, int farbe, boolean links )
     {
-        int farbe2;
-        if (farbe==255){
-            farbe2=0;
-        }else{
-            farbe2=255;
-        }    
+        
+        if (l%2==1){
+
+            if (farbe==255){
+                farbe2=0;
+                stroke(0);
+            }else{
+                farbe2=255;
+                stroke(255);
+            }    
+        }
+        if (l%2==1){
+
+            if (farbe==255){
+                farbe2=255;
+                stroke(255);
+            }else{
+                farbe2=0;
+                stroke(0);
+            }  
+        }
         fill(farbe2);
-        rect(x, y, s,s);
+        rect(x+a, y+a, s,s);
         fill (farbe);
-        circle(x+s/3,y+(s*(1/3)),s/3);
-        println(y+(s*(1/3)));
+        circle(x+s/4+a,y+(s/4)+a,s/4);
+        println(y+(s/3));
         println(s);
-        println(s/3);
-        circle (x+s/3,y+(s*(2/3)),s/3);
+        println(s*(2/3));
+        circle (x+s/4+a,y+56+a,s/4);
+
     }
 
     /**
